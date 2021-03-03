@@ -4,13 +4,18 @@ Caso tenha interesse em assistir ao webinar, [clique aqui](https://ahoy.twilio.c
 
 Esta aplicação funciona como um middleware conectando o webhook da Twilio com uma API desenvolvida em node-red pela IBM que aciona o Watson Assistente e a NLU da IBM em alguns intents (falar com atendente e fallback). Dependendo do valor de alguns atributos retornados pela NLU, o sistema irá chamar a API da Twilio para realizar uma chamada telefônica para o número do WhatsApp que originou a conversa. Ao efetuar a chamada, o usuário é inserido em uma sala de conferência, porém fica em espera até que um segundo participante entre na sala.
 
+## Teste este chatbot
+* Acesse http://twil.io/leao do seu celular para vincular seu número com a nossa sandbox.
+* Envie mensagens como se fosse realizar algum tipo de operação em uma companhia aérea.
+* Caso deseje ativar o atendimento humano, você precisa enviar algum texto que com emoção que possa ser classificada como raiva ou descontentamento.
+
+## Quer rodar como tutorial?
+
 Para executar essa aplicação execute os seguintes comandos:
 ```
 npm install
 npm start
 ```
-
-## Quer rodar como tutorial?
 
 Veja as etapas a seguir, cada passo implementa uma função específica:
 * [0_server.js](tutorial/0_server.js) Esqueleto básico, inicializando as bibliotecas e webhooks possíveis
@@ -21,10 +26,6 @@ Veja as etapas a seguir, cada passo implementa uma função específica:
 * [5_server.js](tutorial/5_server.js) Código final com comando para encerrar todas as ligações ativas
 
 
-## Teste este chatbot
-* Acesse http://twil.io/leao do seu celular para vincular seu número com a nossa sandbox.
-* Envie mensagens como se fosse realizar algum tipo de operação em uma companhia aérea.
-* Caso deseje ativar o atendimento humano, você precisa enviar algum texto que com emoção que possa ser classificada como raiva ou descontentamento.
 
 
 ## Outros códigos-fonte:
