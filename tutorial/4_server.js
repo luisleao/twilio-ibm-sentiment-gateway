@@ -36,17 +36,6 @@ app.get('/', (req, res) => {
 
 // Encerrar apenas chamadas em progresso
 app.get('/kill', (req, res) => {
-    console.log('Encerrar todas as chamadas...');
-    client.calls.each(call => {
-        if (call.status === 'in-progress') {
-            const twiml = new twilio.twiml.VoiceResponse();
-            twiml.say({ voice: 'alice', language: 'pt-BR' }, 'Então é isso pessoal! Obrigado por participar do nosso uébinar.');
-
-            client.calls(call.sid)
-                .update({ twiml: twiml.toString() })
-                .then(call => console.log('encerrada: ', call.to));
-        }
-    })
     res.send('Encerrando todas as chamadas...');
 });
 
@@ -65,7 +54,6 @@ app.post('/espera', (req, res) => {
 // Webhook para resposta quando uma chamada telefônica é realizada e atendida
 app.post('/atendente', (req, res) => {
     const twiml = new twilio.twiml.VoiceResponse();
-    const CallSid = req.body.CallSid;
 
     twiml.pause({ length: 1 });
     twiml.say({ voice: 'alice', language: 'pt-BR' }, 'Obrigado por utilizar a Corujéti. Já vamos conectar você com um dos nossos atendentes.');
@@ -75,7 +63,6 @@ app.post('/atendente', (req, res) => {
         waitUrl: 'https://leao.ngrok.io/espera' // TwiML para espera
     }, 'Webinar');
     res.send(twiml.toString());
-
 });
 
 // Webhook para mensagens recebidas via WhatsApp
@@ -87,6 +74,7 @@ app.post('/mensagem', (req, res) => {
     console.log(mensagem);
     console.log('- - - - - - -');
     console.log();
+    
     const twiml = new twilio.twiml.MessagingResponse();
 
     // chamada da API desenvolvida em Node.red que conecta com o IBM Watson Assistente e NLU 
@@ -110,6 +98,7 @@ app.post('/mensagem', (req, res) => {
         twiml.message(resposta);
         res.send(twiml.toString());
 
+        // se vier o parâmetro "humano", fazer a chamada
         if (humano) {
             console.log('iniciando ligação... ', nonoDigito(user_id.replace('whatsapp:', '')));
             client.calls
@@ -126,7 +115,7 @@ app.post('/mensagem', (req, res) => {
         twiml.message('Ocorreu um erro inesperado neste assistente.');
         twiml.message('Tente novamente mais tarde por favor.');
         res.send(twiml.toString());
-    });
+    });    
 });
 
 
