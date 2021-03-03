@@ -30,7 +30,6 @@ Veja as etapas a seguir, cada passo implementa uma função específica:
 
 ## Outros códigos-fonte:
 * Código-fonte de uso do IBM Watson Assistente e Análise de Emoções: https://github.com/sergiogama/wa-twilio-emotion-sentiment
-* Demo da IBM para uso de NLU: https://www.ibm.com/demos/live/natural-language-understanding/self-service (apenas em Inglês)
 
 
 ##  Documentação
@@ -39,6 +38,7 @@ Veja as etapas a seguir, cada passo implementa uma função específica:
 * WhatsApp API: https://www.twilio.com/docs/whatsapp
 * IBM Watson Assistente: https://www.ibm.com/cloud/watson-assistant
 * IBM Watson NLU: https://www.ibm.com/cloud/watson-natural-language-understanding
+* Demo da IBM para uso de NLU: https://www.ibm.com/demos/live/natural-language-understanding/self-service (apenas em Inglês)
 
 
 
