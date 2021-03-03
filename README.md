@@ -11,7 +11,14 @@ Esta aplicação funciona como um middleware conectando o webhook da Twilio com 
 
 ## Quer rodar como tutorial?
 
-Para executar essa aplicação execute os seguintes comandos:
+Antes de iniciar o programa você precisa realizar alguns procedimentos:
+* Criar uma conta Twilio
+* Configurar o ambiente do Watson Assistente e Watson NLU usando este [código-fonte](https://github.com/sergiogama/wa-twilio-emotion-sentiment)
+* Preencher as variáveis do arquivo `.env.sample`
+* Modificar o nome do arquivo de `.env.sample` para `.env`
+
+
+Para rodar essa aplicação execute os seguintes comandos no seu terminal:
 ```
 npm install
 npm start
