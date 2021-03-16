@@ -27,7 +27,7 @@ npm start
 Veja as etapas a seguir, cada passo implementa uma função específica:
 * [0_server.js](tutorial/0_server.js) Esqueleto básico, inicializando as bibliotecas e webhooks possíveis
 * [1_server.js](tutorial/1_server.js) Resposta do webhook do WhatsApp e chamando API da IBM
-* [2_server.js](tutorial/2_server.js) Fazendo a chamada telefônica caso a API da IBM retorne necessidade de contato humano
+* [2_server.js](tutorial/2_server.js) Fazendo a chamada telefônica caso a API da IBM retorne necessidade de contato humano (e verificação do nono dígito)
 * [3_server.js](tutorial/3_server.js) Resposta do webhook de início da chamada para adicionar na sala de espera
 * [4_server.js](tutorial/4_server.js) Resposta do webhook da sala de espera da conferência
 * [5_server.js](tutorial/5_server.js) Código final com comando para encerrar todas as ligações ativas

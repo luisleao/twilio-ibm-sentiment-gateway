@@ -65,6 +65,7 @@ app.post('/espera', (req, res) => {
 // Webhook para resposta quando uma chamada telefônica é realizada e atendida
 app.post('/atendente', (req, res) => {
     const twiml = new twilio.twiml.VoiceResponse();
+    const CallSid = req.body.CallSid;
 
     twiml.pause({ length: 1 });
     twiml.say({ voice: 'alice', language: 'pt-BR' }, 'Obrigado por utilizar a Corujéti. Já vamos conectar você com um dos nossos atendentes.');
@@ -74,6 +75,7 @@ app.post('/atendente', (req, res) => {
         waitUrl: 'https://leao.ngrok.io/espera' // TwiML para espera
     }, 'Webinar');
     res.send(twiml.toString());
+
 });
 
 // Webhook para mensagens recebidas via WhatsApp
